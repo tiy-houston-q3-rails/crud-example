@@ -39,6 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "simple_form", "3.1.0.rc2"
+gem "rmagick", require: false
 gem "carrierwave"
 
 group :development do

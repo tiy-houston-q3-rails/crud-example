@@ -1,17 +1,34 @@
 <h1>Tacos</h1>
 
-<%= link_to "New Taco!!!11!!", new_taco_path %>
+<div class="well text-right super-well">
+  <%= link_to "New Taco!!!11!!", new_taco_path, class: "btn btn-default" %>
+</div>
 
 <% if false %>
   <%= link_to "New Taco!!!11!!", [:new, :taco] %>
 <% end %>
-
+<!--
 <ul>
   <% @tacos.each do |taco| %>
     <li>
+      <%= image_tag taco.photo.url(:thumb) %>
       <%= link_to taco.name, taco %>
       <% if false %>- <%= link_to "Edit", edit_taco_path(taco) %> <% end %>
       - <%= link_to "Edit", [:edit, taco] %>
     </li>
+  <% end %>
+</ul> -->
+
+<ul class="media-list">
+  <% @tacos.each do |taco| %>
+  <li class="media">
+    <%= link_to taco, class: "pull-left" do %>
+      <%= image_tag taco.photo.url(:thumb), class: "media-object"%>
+    <% end %>
+    <div class="media-body">
+      <h4 class="media-heading"><%= taco.name %></h4>
+      <%= taco.description %>
+    </div>
+  </li>
   <% end %>
 </ul>
