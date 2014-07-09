@@ -1,0 +1,19 @@
+<h1>NEW TACO. NEW TACO HERE</h1>
+
+<div class="errors">
+  <% @taco.errors.full_messages.each do |message| %>
+    <%= message %><br/>
+  <% end %>
+</div>
+
+<%= form_for @taco do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <%= @taco.errors[:name].join(", ") if @taco.errors[:name].any? %>
+  </div>
+  <div>
+    <%=f.label :photo_url %>
+    <%= f.text_field :photo_url %> <%= @taco.errors[:photo_url].join(", ") if @taco.errors[:photo_url].any? %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Tacos</h1>
+
+<%= link_to "New Taco!!!11!!", new_taco_path %>
+
+<ul>
+  <% @tacos.each do |taco| %>
+    <li><%= taco.name %></li>
+  <% end %>
+</ul>
