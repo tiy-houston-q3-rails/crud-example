@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get "tacos" => "tacos#index", as: :tacos
   get "tacos/new" => "tacos#new", as: :new_taco
   post "tacos" => "tacos#create"
@@ -7,4 +8,6 @@ Rails.application.routes.draw do
   patch "tacos/:id" => "tacos#update"
   get "tacos/:id" => "tacos#show", as: :taco
   delete "tacos/:id" => "tacos#destroy"
+
+  root to: "tacos#index"
 end

@@ -1,5 +1,7 @@
 class TacosController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @tacos = Taco.all
   end

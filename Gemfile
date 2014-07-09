@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 gem "simple_form", "3.1.0.rc2"
 gem "rmagick", require: false
 gem "carrierwave"
+gem "devise"
 
 group :development do
   gem 'better_errors'
