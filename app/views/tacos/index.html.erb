@@ -2,8 +2,16 @@
 
 <%= link_to "New Taco!!!11!!", new_taco_path %>
 
+<% if false %>
+  <%= link_to "New Taco!!!11!!", [:new, :taco] %>
+<% end %>
+
 <ul>
   <% @tacos.each do |taco| %>
-    <li><%= taco.name %></li>
+    <li>
+      <%= link_to taco.name, taco %>
+      <% if false %>- <%= link_to "Edit", edit_taco_path(taco) %> <% end %>
+      - <%= link_to "Edit", [:edit, taco] %>
+    </li>
   <% end %>
 </ul>

@@ -1,0 +1,16 @@
+<h1>Editing: <%= @taco.name %></h1>
+
+<%= form_for @taco do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :photo_url %>
+    <%= f.text_field :photo_url %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+
+<%= link_to "Delete", taco_path(@taco), method: :delete, "data-confirm"=>"Are you sure?" %>
