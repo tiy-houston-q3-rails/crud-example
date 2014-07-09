@@ -1,15 +1,10 @@
 <h1>Editing: <%= @taco.name %></h1>
 
-<%= form_for @taco do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :photo_url %>
-    <%= f.text_field :photo_url %>
-  </div>
-  <%= f.submit %>
+<%= simple_form_for @taco do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo_url %>
+  <%= f.input :description, hint: "Can use markdown"%>
+  <%= f.submit class: "btn btn-primary"%>
 <% end %>
 
 

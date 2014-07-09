@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "simple_form", "3.1.0.rc2"
 
 group :development do
   gem 'better_errors'
