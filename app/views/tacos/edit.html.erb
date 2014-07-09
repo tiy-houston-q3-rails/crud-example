@@ -1,11 +1,6 @@
 <h1>Editing: <%= @taco.name %></h1>
 
-<%= simple_form_for @taco do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo %>
-  <%= f.input :description, hint: "Can use markdown"%>
-  <%= f.submit class: "btn btn-primary"%>
-<% end %>
+<%= render partial: "form" %>
 
 
 <%= link_to "Delete", taco_path(@taco), method: :delete, "data-confirm"=>"Are you sure?" %>

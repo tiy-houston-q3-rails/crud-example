@@ -28,6 +28,7 @@
     <div class="media-body">
       <h4 class="media-heading"><%= taco.name %></h4>
       <%= taco.description %>
+      -- <%= distance_of_time_in_words(Time.now, taco.created_at)  %> ago
     </div>
   </li>
   <% end %>
