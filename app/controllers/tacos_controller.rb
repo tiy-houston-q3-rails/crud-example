@@ -19,7 +19,7 @@ class TacosController < ApplicationController
   def update
     @taco = Taco.find(params[:id])
     if @taco.update taco_params
-      redirect_to tacos_path
+      redirect_to @taco
     else
       #let people correct mistakes
       render :edit
@@ -44,7 +44,7 @@ class TacosController < ApplicationController
 
   private
   def taco_params
-    params.require(:taco).permit(:name, :photo_url)
+    params.require(:taco).permit(:name, :photo, :description)
   end
 
 end
